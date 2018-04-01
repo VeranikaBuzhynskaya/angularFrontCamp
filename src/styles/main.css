@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    position: relative;
+    background-color: #D5E0E3;
+}
+
+.header h1 {
+    text-align: center;
+    padding: 30px 0;
+    color: #8D939F;
+}
+
+.add-task{
+    position: absolute;
+    right: 0;
+    top: 20px;
+    margin-right: 50px;
+}
+
+.add-task button{
+    background-color: #F28E9D;
+    padding: 15px 20px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.task{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    background-color: #FCFCFC;
+    min-width: 500px;
+    border: 1px solid #69B7BE;
+    border-radius: 10px;
+    margin: 5px 100px;
+}
+
+.task-setting{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.task-status h3{
+    display: inline-block;
+    color: #18ACB3;
+    cursor: pointer;
+}
+
+.task button{
+    background-color:#8FD3D7;
+    color: white;
+}
+
+.result-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: #8FD3D7;
+}
+
+button{
+    color: #18ACB3;
+    padding: 10px 20px;
+    background-color: white;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.date{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 5px;
+    color: #8D939F;
+}
+.description{
+    color: #41485A;
+}
+
+.done-todo {
+    text-decoration: line-through;
+}
+
+textarea.ng-invalid.ng-dirty {
+    border: 3px solid #F28E9D;
+}
+
+.form-task{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+    background-color: #FCFCFC;
+    min-width: 200px;
+    max-width: 450px;
+    border: 1px solid #69B7BE;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+input[type="submit"]{
+    padding: 10px 20px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:#8FD3D7;
+    color: white;
+    margin-left: 450px;
+}
+
+label[for="todo-title"], label[for="todo-description"]{
+    color: #18ACB3;
+    font-size: 14px;
+}
+
+textarea{
+    margin:10px 0;
+}
+
+.validation span{
+    color: #F28E9D;
+    font-size: 12px;
+}
+
+.sort-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.sort-box input{
+    position: absolute;
+    left: -99999px;
+}
+
+.sort-box label {
+    color: #18ACB3;
+    background-color: white;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sort-box input[type=radio]:checked ~ label {
+    background-color:#18ACB3;
+    color: white;
+}
+
+.sort-by-title, .count-tasks{
+    color: white;
+    font-weight: bold;
+}
+

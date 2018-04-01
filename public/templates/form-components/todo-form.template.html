@@ -1,0 +1,34 @@
+<form name="todoForm" ng-submit="$ctrl.submit()">
+    <div class= "form-task">
+        <label for="todo-title">Title for task</label>
+        <input 
+            ng-model="$ctrl.title" 
+            name="todoTitle" 
+            id="todo-title" 
+            required
+        >
+        </input>
+        <div class="validation">
+            <span ng-show="todoForm.todoTitle.$dirty && todoForm.todoTitle.$error.required">Title is required!</span>
+        </div>
+
+        <label for="todo-description">Description for task</label>
+        <textarea 
+            ng-model="$ctrl.description" 
+            name="todoDescription" 
+            id="todo-description" 
+            cols="30" 
+            rows="10"
+            ng-minlength="20"
+            required
+        >
+        </textarea>
+        <div class="validation">
+            <span ng-show="todoForm.todoDescription.$dirty && todoForm.todoDescription.$error.required">Description is required!</span>
+            <span ng-show="todoForm.todoDescription.$dirty && todoForm.todoDescription.$error.minlength">Description should be at least 20 symbols!</span>
+        </div>
+        
+    </div>
+    
+    <input type="submit" id="submit" value="Submit" ng-disabled="todoForm.$invalid"/>
+</form>

@@ -1,0 +1,47 @@
+<header class="header">
+    <h1>My todo list</h1>
+    <div class="add-task">
+        <button ng-click="$ctrl.addTask()">+</button>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="result-box">
+        <span class="count-tasks">{{$ctrl.todos.length}} tasks need to do</span>
+        <div class="sort-box">
+                <p class="sort-by-title">Sort by</p>
+                <div>
+                    <input type="radio" name="sortBy" id="title"  checked ng-click="$ctrl.sortBy('title')"/>
+                    <label for="title">Title</label>
+                </div>
+                <div>
+                    <input type="radio" name="sortBy" id="createdAt" ng-click="$ctrl.sortBy('createdAt')"/>
+                    <label for="createdAt">Date</label>
+                </div>
+        </div>
+    </div>
+    <div class="todo-list">
+        <div ng-repeat="todo in $ctrl.todos | orderBy: $ctrl.fieldName:$ctrl.reverse" class="task">
+            <div class="task-setting">
+                <div class="task-status">
+                    <input type="checkbox" ng-model="todo.isDone">
+                    <span class="checkbox-custom"></span>
+                    <h3 
+                        ng-bind="todo.title"
+                        ng-class="{'done-todo': todo.isDone}"
+                        ng-click="$ctrl.editTask(todo.id)">
+                    </h3> 
+                </div>
+                <div class="task-buttons">
+                    <button ng-click="$ctrl.removeTask(todo.id)">Remove</button>
+                    <button ng-click="$ctrl.editTask(todo.id)">Edit</button> 
+                </div>
+            </div>
+            <span 
+                class="description"
+                ng-bind="todo.description">
+            </span>
+            <span class='date'> created at {{$ctrl.formatDate(todo.createdAt)}}</span>
+        </div>
+    </div>  
+</main>
