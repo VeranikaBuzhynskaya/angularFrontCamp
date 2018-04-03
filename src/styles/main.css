@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-.header{
+.header {
     position: relative;
     background-color: #D5E0E3;
 }
@@ -14,14 +14,14 @@
     color: #8D939F;
 }
 
-.add-task{
+.add-task {
     position: absolute;
     right: 0;
     top: 20px;
     margin-right: 50px;
 }
 
-.add-task button{
+.add-task button {
     background-color: #F28E9D;
     padding: 15px 20px;
     color: white;
@@ -38,7 +38,7 @@
     margin: 15px 0;
 }
 
-.task{
+.task {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -50,7 +50,7 @@
     margin: 5px 100px;
 }
 
-.task-setting{
+.task-setting {
     display: flex;
     flex-direction: row; 
     justify-content: space-between;
@@ -75,7 +75,7 @@
     background-color: #8FD3D7;
 }
 
-button{
+button {
     color: #18ACB3;
     padding: 10px 20px;
     background-color: white;
@@ -85,7 +85,7 @@ button{
     border-radius: 5px;
 }
 
-.date{
+.date {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -133,7 +133,7 @@ label[for="todo-title"], label[for="todo-description"]{
     font-size: 14px;
 }
 
-textarea{
+textarea {
     margin:10px 0;
 }
 
@@ -167,8 +167,20 @@ textarea{
     color: white;
 }
 
-.sort-by-title, .count-tasks{
+.sort-by-title, .count-tasks, .filter-days{
     color: white;
     font-weight: bold;
+}
+
+.filter-days {
+    margin-left: 20px;
+}
+
+.filter-days input {
+    width: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px 5px;
+    text-align: center;
 }
 

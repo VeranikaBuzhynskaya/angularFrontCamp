@@ -11,6 +11,7 @@
             }
             
             self.fieldName = 'title';
+            self.day = null;
             self.reverse = false
         };
 
@@ -32,6 +33,16 @@
             self.reverse = (self.fieldName === fieldName) ? !self.reverse : false;
             self.fieldName = fieldName;
         };
+
+        self.filterDays = (day) => {
+            return function(todo){
+                if(day){
+                    const oneDay=1000*60*60*24;     
+                    if(Math.ceil((new Date() - todo.createdAt)/oneDay) > day) return false;
+                    else return true; 
+                } else return true;
+            }
+        }
 
         self.formatDate = (date) => {
             let month = date.getMonth() + 1;

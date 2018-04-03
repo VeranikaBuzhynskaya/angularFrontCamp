@@ -7,11 +7,14 @@
 
 <main class="main-content">
     <div class="result-box">
-        <span class="count-tasks">{{$ctrl.todos.length}} tasks need to do</span>
+        <div>
+            <span class="count-tasks">{{$ctrl.todos.length}} tasks need to do</span>
+            <label class="filter-days">Show posts at last: <input type="text" ng-model="day"/> days</label>
+        </div>
         <div class="sort-box">
                 <p class="sort-by-title">Sort by</p>
                 <div>
-                    <input type="radio" name="sortBy" id="title"  checked ng-click="$ctrl.sortBy('title')"/>
+                    <input type="radio" name="sortBy" id="title" checked ng-click="$ctrl.sortBy('title')"/>
                     <label for="title">Title</label>
                 </div>
                 <div>
@@ -21,7 +24,7 @@
         </div>
     </div>
     <div class="todo-list">
-        <div ng-repeat="todo in $ctrl.todos | orderBy: $ctrl.fieldName:$ctrl.reverse" class="task">
+        <div ng-repeat="todo in $ctrl.todos | orderBy: $ctrl.fieldName:$ctrl.reverse | filter:$ctrl.filterDays(day)" class="task">
             <div class="task-setting">
                 <div class="task-status">
                     <input type="checkbox" ng-model="todo.isDone">
